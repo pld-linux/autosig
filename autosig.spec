@@ -8,6 +8,7 @@ Group:		Applications/Console
 Source0:	http://www.irendi.com/~msharpe/%{name}-%{version}.tar.gz
 # Source0-md5:	b13ddbef5051b2b2249d5faef61374be
 URL:		http://www.irendi.com/~msharpe
+BuildRequires:  sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,13 +27,13 @@ Autosig jest prostym narzêdziem generuj±cym pliki .signature oraz
 	DEFINES="%{rpmcflags} -DNEED_BASENAME" \
 	CC="%{__cc}"
 
-sed -i 's/quotes/\/usr\/share\/autosig\/quotes/' chplan
-sed -i 's/dotplannc/\/usr\/share\/autosig\/dotplannc/' chplan
-sed -i 's/planFile=dotplan/planFile=$quoteFile/' chplan
-sed -i 's/quotes/\/usr\/share\/autosig\/quotes/' selm
-sed -i 's/dotsignc/\/usr\/share\/autosig\/dotsignc/' selm
-sed -i 's/quotes/\/usr\/share\/autosig\/quotes/' chsig
-sed -i 's/dotsignc/\/usr\/share\/autosig\/dotsignc/' chsig
+%{__sed} -i 's/quotes/\/usr\/share\/autosig\/quotes/' chplan
+%{__sed} -i 's/dotplannc/\/usr\/share\/autosig\/dotplannc/' chplan
+%{__sed} -i 's/planFile=dotplan/planFile=$quoteFile/' chplan
+%{__sed} -i 's/quotes/\/usr\/share\/autosig\/quotes/' selm
+%{__sed} -i 's/dotsignc/\/usr\/share\/autosig\/dotsignc/' selm
+%{__sed} -i 's/quotes/\/usr\/share\/autosig\/quotes/' chsig
+%{__sed} -i 's/dotsignc/\/usr\/share\/autosig\/dotsignc/' chsig
 
 %install
 rm -rf $RPM_BUILD_ROOT
