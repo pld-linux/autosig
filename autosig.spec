@@ -2,7 +2,7 @@ Summary:	Autosig - tool for generating .signature and .plan files
 Summary(pl):	Autosig - narzêdzie do tworzenia plików .signature, .plan
 Name:		autosig
 Version:	2.3
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		Applications/Console
 Source0:	http://www.irendi.com/~msharpe/%{name}-%{version}.tar.gz
@@ -22,9 +22,9 @@ Autosig jest prostym narzêdziem generuj±cym pliki .signature oraz
 %setup -q
 
 %build
-
 %{__make} \
-	DEFINES="%{rpmcflags} -DNEED_BASENAME"
+	DEFINES="%{rpmcflags} -DNEED_BASENAME" \
+	CC="%{__cc}"
 
 sed -i 's/quotes/\/usr\/share\/autosig\/quotes/' chplan
 sed -i 's/dotplannc/\/usr\/share\/autosig\/dotplannc/' chplan
@@ -39,8 +39,8 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 
-install {autosig,autosigd,chplan,chsig,selm,smutt} $RPM_BUILD_ROOT%{_bindir}
-install {dotplannc,dotsignc,quotes} $RPM_BUILD_ROOT%{_datadir}/%{name}
+install autosig autosigd chplan chsig selm smutt $RPM_BUILD_ROOT%{_bindir}
+install dotplannc dotsignc quotes  $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
