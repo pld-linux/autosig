@@ -7,7 +7,7 @@ License:	GPL v2
 Group:		Applications/Console
 Source0:	http://www.irendi.com/~msharpe/%{name}-%{version}.tar.gz
 # Source0-md5:	b13ddbef5051b2b2249d5faef61374be
-URL:		http://www.irendi.com/~msharpe
+URL:		http://www.irendi.com/~msharpe/
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
