@@ -1,5 +1,5 @@
 Summary:	Autosig - tool for generating .signature and .plan files
-Summary(pl.UTF-8):   Autosig - narzędzie do tworzenia plików .signature, .plan
+Summary(pl.UTF-8):	Autosig - narzędzie do tworzenia plików .signature, .plan
 Name:		autosig
 Version:	2.3
 Release:	0.2
