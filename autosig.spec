@@ -1,5 +1,5 @@
 Summary:	Autosig - tool for generating .signature and .plan files
-Summary(pl):	Autosig - narzêdzie do tworzenia plików .signature, .plan
+Summary(pl.UTF-8):   Autosig - narzÄ™dzie do tworzenia plikÃ³w .signature, .plan
 Name:		autosig
 Version:	2.3
 Release:	0.2
@@ -15,8 +15,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Autosig is a small utility for generating .signature files for email
 and .plan files for finger.
 
-%description -l pl
-Autosig jest prostym narzêdziem generuj±cym pliki .signature oraz
+%description -l pl.UTF-8
+Autosig jest prostym narzÄ™dziem generujÄ…cym pliki .signature oraz
 .plan.
 
 %prep
